@@ -495,10 +495,10 @@ def main():
         print(f"  Average Wait Time: {config['avg_wait_time']:.2f} minutes")
         print(f"  Monthly Cost: ${config['monthly_cost']}")
     
-    # Save results to CSV for further analysis if needed
+    # guarda los resultados del CSV 
     results_df.to_csv('simulation_results.csv', index=False)
     
-    # guarda la configuracion para la 
+    # guarda la configuracion para el reporte
     with open('recommended_configurations.txt', 'w') as f:
         f.write("Recommended Resource Configurations:\n")
         for day_type, config in best_configs.items():
@@ -509,6 +509,4 @@ def main():
             f.write(f"  X-ray Machines: {config['xray_machines']}\n")
             f.write(f"  Average Wait Time: {config['avg_wait_time']:.2f} minutes\n")
             f.write(f"  Monthly Cost: ${config['monthly_cost']}\n")
-
-if __name__ == "__main__":
     main()
